@@ -49,7 +49,7 @@
                         <a href="">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
                             <span>
-                                Locations
+                                Locationsasdasdasd
                             </span>
                         </a>
                         <a href="">
