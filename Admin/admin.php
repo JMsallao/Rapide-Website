@@ -190,7 +190,7 @@
     </li>
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./pages/profile.html">
+  <a class="nav-link text-white " href="./pages/profile.php">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">person</i>
@@ -202,25 +202,14 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./pages/sign-in.html">
+<form action="logouot.php" method="post" class="logout-form">
+  <a class="nav-link text-white " href="../index.php">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">login</i>
+        <i class="material-icons opacity-10">logout</i>
       </div>
     
-    <span class="nav-link-text ms-1">Sign In</span>
-  </a>
-</li>
-
-  
-<li class="nav-item">
-  <a class="nav-link text-white " href="./pages/sign-up.html">
-    
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">assignment</i>
-      </div>
-    
-    <span class="nav-link-text ms-1">Sign Up</span>
+    <span class="nav-link-text ms-1">Log out</span>
   </a>
 </li>
 
