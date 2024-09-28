@@ -1394,7 +1394,7 @@ include('../header.php');
                                             </form>
                                         </li>
                                         <li>
-                                            <form action="logout.php" method="post"><button type="submit"
+                                            <form action="../logout.php" method="post"><button type="submit"
                                                     name="logout">Logout</button></form>
                                         </li>
                                     </div>

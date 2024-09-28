@@ -1,4 +1,158 @@
 <?php
+class Index
+{
+    private $username = 'root';
+    private $password = '';
+    private $pdo = null;
+    private $crime;
+    private $date;
+    private $location;
+    private $latitude;
+    private $longitude;
+
+    public function __construct($crime = null, $date = null, $location = null, $latitude = null, $longitude = null)
+    {
+        $this->crime = $crime;
+        $this->date = $date;
+        $this->location = $location;
+        $this->latitude = $latitude;
+        $this->longitude = $longitude;
+    }
+
+    private function connect()
+    {
+        try {
+            $this->pdo = new PDO('mysql:host=localhost;dbname=chart_db', $this->username, $this->password);
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+        return $this->pdo;
+    }
+
+    public function getMarkers()
+    {
+        $con = $this->connect();
+        $sql = "SELECT crime, location, latitude, longitude FROM piechart_tbl";
+        $data = $con->prepare($sql);
+        $data->execute();
+        return $data->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function insertCrime()
+    {
+        $con = $this->connect();
+        $sql = "INSERT INTO piechart_tbl (crime, date, location, latitude, longitude) VALUES (:crime, :date, :location, :latitude, :longitude)";
+        $data = $con->prepare($sql);
+        $data->bindParam(':crime', $this->crime);
+        $data->bindParam(':date', $this->date);
+        $data->bindParam(':location', $this->location);
+        $data->bindParam(':latitude', $this->latitude);
+        $data->bindParam(':longitude', $this->longitude);
+        return $data->execute();
+    }
+
+    public function getCrimeDropdown()
+    {
+        $con = $this->connect();
+        $sql = "SELECT crime_name FROM crimes";
+        $data = $con->prepare($sql);
+        $data->execute();
+        $result = $data->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($result as $row) {
+            echo "<option>" . htmlspecialchars($row["crime_name"]) . "</option>";
+        }
+
+        if (empty($result)) {
+            echo "<option value=''>No Items Found</option>";
+        }
+    }
+
+    public function getCityDropdown()
+    {
+        $con = $this->connect();
+        $sql = "SELECT city FROM tbl_city";
+        $data = $con->prepare($sql);
+        $data->execute();
+        $result = $data->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($result as $row) {
+            echo "<option>" . htmlspecialchars($row["city"]) . "</option>";
+        }
+
+        if (empty($result)) {
+            echo "<option value=''>No Items Found</option>";
+        }
+    }
+
+    public function viewChart()
+    {
+        $con = $this->connect();
+        $sql = "SELECT crime, COUNT(*) AS CrimeCount FROM piechart_tbl GROUP BY crime";
+        $data = $con->prepare($sql);
+        $data->execute();
+
+        $total_count = 0;
+        $data_array = array();
+
+        while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+            $total_count += $row["CrimeCount"];
+        }
+
+        $data->execute();
+
+        while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+            $percentage = ($row["CrimeCount"] / $total_count) * 100;
+            $data_array[] = array($row["crime"], round($percentage, 2));
+        }
+
+        return json_encode($data_array);
+    }
+
+    public function insertCrimes()
+    {
+        if (!empty($_GET['crime']) && !empty($_GET['date']) && !empty($_GET['location']) && !empty($_GET['lat']) && !empty($_GET['lng'])) {
+            $this->crime = $_GET['crime'];
+            $this->date = $_GET['date'];
+            $this->location = $_GET['location'];
+            $this->latitude = $_GET['lat'];
+            $this->longitude = $_GET['lng'];
+
+            if ($this->insertCrime()) {
+                echo "Saved Successfully";
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Failed!";
+            }
+        }
+    }
+}
+
+$index = new Index();
+
+if ($_SERVER["REQUEST_METHOD"] === 'GET') {
+    $index->insertCrimes();
+}
+
+$data_json = $index->viewChart();
+$markers = $index->getMarkers();
+?>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "chart_db";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+
+
+<?php
 include('../header.php');
 include('user_navbar.php');
 ?>
@@ -46,159 +200,192 @@ include('user_navbar.php');
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.2.2/maptiler-sdk.css" rel="stylesheet" />
 
 
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    google.charts.load('current', {
+        'packages': ['corechart', 'bar']
+    });
+
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Crimes', 'Count'],
+            <?php
+                if (isset($data_json)) {
+                    $data_array = json_decode($data_json, true);
+                    foreach ($data_array as $crime) {
+                        echo "['" . $crime[0] . "', " . $crime[1] . "],";
+                    }
+                }
+                ?>
+        ]);
+        var options = {
+            title: 'Crime Reports'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+
+    google.charts.setOnLoadCallback(drawBarChart);
+
+    function drawBarChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Crime', 'Percentage'],
+            <?php
+                if (isset($data_json)) {
+                    $data_array = json_decode($data_json, true);
+                    foreach ($data_array as $crime) {
+                        echo "['" . $crime[0] . "', " . $crime[1] . "],";
+                    }
+                }
+                ?>
+        ]);
+        var options = {
+            title: 'Crime Reports',
+            width: 900,
+            legend: {
+                position: 'none'
+            },
+            chart: {
+                title: 'Bar Graph Crime Reports',
+                subtitle: 'crime by percentage'
+            },
+            bars: 'horizontal',
+            axes: {
+                x: {
+                    0: {
+                        side: 'top',
+                        label: 'Percentage'
+                    }
+                }
+            },
+            bar: {
+                groupWidth: "40%"
+            }
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('dual_x_div'));
+        chart.draw(data, options);
+    }
+    </script>
+    <style>
+    #dual_x_div>div>div:nth-child(1)>div>svg>rect {
+        width: 100px;
+    }
+    </style>
+
+
 </head>
 
 <body class="sub_page">
 
+    <nav class="navbar navbar-dark bg-dark shadow">
+        <span class="navbar-brand mb-0 h1 ms-3">Chart and Graph</span>
+        <a href="data_table.php" style="text-decoration: none; color: white;" class="me-3">Data Table</a>
+    </nav>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-3">
+                <form action="" method="GET">
+                    <div class="form-group">
+                        <label for="crime">Insert Crime:</label>
+                        <select class="form-control mt-0" name="crime" id="crime">
+                            <?php $index->getCrimeDropdown(); ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Insert Date:</label>
+                        <input type="date" name="date" class="form-control mt-0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Insert Location:</label>
+                        <select class="form-control mt-0" name="location" id="location">
+                            <?php $index->getCityDropdown(); ?>
+                        </select>
+                        <input type="hidden" name="lat" id="lat">
+                        <input type="hidden" name="lng" id="lng">
+                    </div>
+                    <input type="submit" class="btn btn-success form-control mt-2" value="Add Crime">
+                    <a href="data_table.php" class="btn btn-primary form-control mt-2">Data Table</a>
+                </form>
 
-    <!-- team section -->
-
-    <section class="page-section bg-light" id="team">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Map</h2>
-                <h3 class="section-subheading text-muted">Where are you?</h3>
             </div>
-            <div class="row">
-                <div id="map" style="width: 50%; height: 300px;"></div>
-                <script>
-                maptilersdk.config.apiKey = 'Pn4vxcWgqoFGN0zJ9Osd';
-                const map = new maptilersdk.Map({
-                    container: 'map', // container's id or the HTML element to render the map
-                    style: "basic-v2-light",
-                    center: [16.62662018, 49.2125578], // starting position [lng, lat]
-                    zoom: 14, // starting zoom
-                });
-                </script>
+            <div class="col-md-6">
+                <div id="map" class="form-control mb-1" style="height: 570px; width: 870px"></div>
+                <div id="piechart" class="form-control mb-1" style="height: 500px; width: 870px"></div>
+                <div id="dual_x_div" class="form-control" style="height: 500px; width: 870px"></div>
             </div>
 
         </div>
-    </section>
-    <!-- end team section -->
+    </div>
+    <script>
+    const key = 'sdMXTvTD6NiZI2F6n4sf';
+    const map = L.map('map').setView([14.4791, 120.8970], 10);
+    const mtLayer = L.maptilerLayer({
+        apiKey: key,
+        style: "basic-v2"
+    }).addTo(map);
 
-    <!-- info section -->
-    <section class="info_section ">
-        <div class="container">
-            <div class="info_top">
-                <div class="row">
-                    <div class="col-md-3 ">
-                        <a class="navbar-brand" href="index.html">
-                            Finter
-                        </a>
-                    </div>
-                    <div class="col-md-5 ">
-                        <div class="info_contact">
-                            <a href="">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>
-                                    Location
-                                </span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>
-                                    +01 1234567890
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ">
-                        <div class="social_box">
-                            <a href="">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="info_bottom">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="info_detail">
-                            <h5>
-                                Company
-                            </h5>
-                            <p>
-                                Randomised words which don't look even slightly believable. If you are going to use a
-                                passage of
-                                Lorem
-                                Ipsum, you need to be sure
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="info_form">
-                            <h5>
-                                NEWSLETTER
-                            </h5>
-                            <form action="">
-                                <input type="text" placeholder="Enter Your Email" />
-                                <button type="submit">
-                                    Subscribe
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="info_detail">
-                            <h5>
-                                Services
-                            </h5>
-                            <p>
-                                Randomised words which don't look even slightly believable. If you are going to use a
-                                passage of
-                                Lorem
-                                Ipsum, you need to be sure
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6">
-                        <div class="">
-                            <h5>
-                                Useful links
-                            </h5>
-                            <ul class="info_menu">
-                                <li>
-                                    <a href="index.html">
-                                        Home
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="about.html">
-                                        About
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="service.html">
-                                        Services
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="team.html">
-                                        Team
-                                    </a>
-                                </li>
-                                <li class="mb-0">
-                                    <a href="contact.html">
-                                        Contact Us
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php foreach ($markers as $marker) : ?>
+    L.marker([<?= $marker['latitude'] ?>, <?= $marker['longitude'] ?>]).addTo(map).bindPopup(
+        "<div style='text-align: center;'><b><?= htmlspecialchars($marker['crime']) ?></b><br><b><?= htmlspecialchars($marker['location']) ?>, Cavite</b></div>"
+    );
+    <?php endforeach; ?>
+
+    async function getCoordinates(address) {
+        const apiKey = 'sdMXTvTD6NiZI2F6n4sf';
+        const url =
+            `https://api.maptiler.com/geocoding/${encodeURIComponent(address + ", Cavite")}.json?key=${apiKey}`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error: ${response.status} ${response.statusText}`);
+            const data = await response.json();
+            if (data.features && data.features.length > 0) {
+                const [longitude, latitude] = data.features[0].geometry.coordinates;
+                return {
+                    latitude,
+                    longitude
+                };
+            } else {
+                throw new Error('No results found');
+            }
+        } catch (error) {
+            console.error(error);
+            alert(error.message);
+            return null;
+        }
+    }
+
+    document.getElementById('location').addEventListener('change', async (event) => {
+        const address = event.target.value;
+        if (address) {
+            const coords = await getCoordinates(address);
+            if (coords) {
+                document.getElementById('lat').value = coords.latitude;
+                document.getElementById('lng').value = coords.longitude;
+            } else {
+                document.getElementById('lat').value = 'N/A';
+                document.getElementById('lng').value = 'N/A';
+            }
+        } else {
+            document.getElementById('lat').value = '';
+            document.getElementById('lng').value = '';
+        }
+    });
+    </script>
 
     <!-- end info_section -->
 

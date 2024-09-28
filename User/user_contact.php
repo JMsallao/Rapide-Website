@@ -37,6 +37,94 @@ include('user_navbar.php');
     <link href="css\style2.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="css/responsive.css" rel="stylesheet" />
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    google.charts.load('current', {
+        'packages': ['corechart', 'bar']
+    });
+
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Crimes', 'Count'],
+            <?php
+                if (isset($data_json)) {
+                    $data_array = json_decode($data_json, true);
+                    foreach ($data_array as $crime) {
+                        echo "['" . $crime[0] . "', " . $crime[1] . "],";
+                    }
+                }
+                ?>
+        ]);
+        var options = {
+            title: 'Crime Reports'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+
+    google.charts.setOnLoadCallback(drawBarChart);
+
+    function drawBarChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Crime', 'Percentage'],
+            <?php
+                if (isset($data_json)) {
+                    $data_array = json_decode($data_json, true);
+                    foreach ($data_array as $crime) {
+                        echo "['" . $crime[0] . "', " . $crime[1] . "],";
+                    }
+                }
+                ?>
+        ]);
+        var options = {
+            title: 'Crime Reports',
+            width: 900,
+            legend: {
+                position: 'none'
+            },
+            chart: {
+                title: 'Bar Graph Crime Reports',
+                subtitle: 'crime by percentage'
+            },
+            bars: 'horizontal',
+            axes: {
+                x: {
+                    0: {
+                        side: 'top',
+                        label: 'Percentage'
+                    }
+                }
+            },
+            bar: {
+                groupWidth: "40%"
+            }
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('dual_x_div'));
+        chart.draw(data, options);
+    }
+    </script>
+    <style>
+    #dual_x_div>div>div:nth-child(1)>div>svg>rect {
+        width: 100px;
+    }
+    </style>
+
 </head>
 
 <body class="sub_page">
