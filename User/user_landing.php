@@ -16,11 +16,11 @@ include('user_navbar.php');
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/fevicon.png" type="image/x-icon">
     <title>Rapide</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css\bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css\bootstrap.css" />
 
     <!-- fonts style -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -32,10 +32,10 @@ include('user_navbar.php');
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
         integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
     <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="../css/style3.css" rel="stylesheet" />
+    <link href="../css/style4.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="../css/responsive.css" rel="stylesheet" />
 
@@ -447,7 +447,7 @@ include('user_navbar.php');
             <div class="row">
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="images/bg3.jpg" class="box_img" alt="about img">
+                        <img src="../images/bg3.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
                 <div class="col-md-5 mx-auto">
@@ -608,7 +608,7 @@ include('user_navbar.php');
             <div class="info_top">
                 <div class="row">
                     <div class="col-md-3 ">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="../index.html">
                             Rapide
                         </a>
                     </div>
@@ -731,20 +731,20 @@ include('user_navbar.php');
     <!-- footer section -->
 
     <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
     <!-- bootstrap js -->
-    <script src="js/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
     <!-- owl slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- nice select -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
         integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
     <!-- custom js -->
-    <script src="js/custom.js"></script>
+    <script src="../js/custom.js"></script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
     </script>

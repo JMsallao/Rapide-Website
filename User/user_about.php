@@ -15,7 +15,7 @@ include('user_navbar.php');
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="../images/fevicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
     <title>Finter</title>
 
     <!-- bootstrap core css -->
@@ -34,7 +34,7 @@ include('user_navbar.php');
     <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="../css/style2.css" rel="stylesheet" />
+    <link href="css\style2.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="../css/responsive.css" rel="stylesheet" />
 </head>
@@ -66,7 +66,7 @@ include('user_navbar.php');
                 </div>
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="images/about-img.jpg" class="box_img" alt="about img">
+                        <img src="../images/about-img.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
             </div>
