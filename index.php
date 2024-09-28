@@ -42,45 +42,7 @@
         </div>
         <!-- header section strats -->
         <header class="header_section">
-            <div class="header_top">
-                <div class="container-fluid header_top_container">
 
-                    <div class="contact_nav">
-                        <a href="">
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <span>
-                                Locationsasdasdasd
-                            </span>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <span>
-                                Call : +01 123455678990
-                            </span>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <span>
-                                demo@gmail.com
-                            </span>
-                        </a>
-                    </div>
-                    <div class="social_box">
-                        <a href="">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
             <div class="header_bottom">
                 <div class="container-fluid">
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -105,12 +67,6 @@
                                     <a class="nav-link" href="user_service.php">Services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="user_map.php"> Map </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="user_contact.php">Contact Us</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="login.php">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         <span>
@@ -118,11 +74,6 @@
                                         </span>
                                     </a>
                                 </li>
-                                <form class="form-inline justify-content-center">
-                                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </form>
                             </ul>
                         </div>
                     </nav>
@@ -141,12 +92,13 @@
                                     <div class="detail-box">
                                         <h1>
                                             We Provide <br>
-                                            Welding Services
+                                            Automotive Services
                                         </h1>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit,
-                                            sed tempora praesentium commodi error, hic recusandae repudiandae neque ad
-                                            molestias, atque veritatis labore quae eveniet autem in
+                                            The automotive industry is a vast and dynamic sector that designs,
+                                            manufactures, and sells vehicles, including cars, trucks, motorcycles, and
+                                            buses. It plays a crucial role in global economies, with major contributions
+                                            to employment, innovation, and trade.
                                         </p>
                                         <div class="btn-box">
                                             <a href="" class="btn1">
@@ -165,12 +117,13 @@
                                     <div class="detail-box">
                                         <h1>
                                             We Provide <br>
-                                            Welding Services
+                                            Automotive Services
                                         </h1>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit,
-                                            sed tempora praesentium commodi error, hic recusandae repudiandae neque ad
-                                            molestias, atque veritatis labore quae eveniet autem in
+                                            The automotive industry is a vast and dynamic sector that designs,
+                                            manufactures, and sells vehicles, including cars, trucks, motorcycles, and
+                                            buses. It plays a crucial role in global economies, with major contributions
+                                            to employment, innovation, and trade.
                                         </p>
                                         <div class="btn-box">
                                             <a href="" class="btn1">
@@ -189,12 +142,13 @@
                                     <div class="detail-box">
                                         <h1>
                                             We Provide <br>
-                                            Welding Services
+                                            Automotive Services
                                         </h1>
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio omnis fugit,
-                                            sed tempora praesentium commodi error, hic recusandae repudiandae neque ad
-                                            molestias, atque veritatis labore quae eveniet autem in
+                                            The automotive industry is a vast and dynamic sector that designs,
+                                            manufactures, and sells vehicles, including cars, trucks, motorcycles, and
+                                            buses. It plays a crucial role in global economies, with major contributions
+                                            to employment, innovation, and trade.
                                         </p>
                                         <div class="btn-box">
                                             <a href="" class="btn1">
@@ -232,9 +186,10 @@
                     Our Services
                 </h2>
                 <p class="col-lg-8 px-0">
-                    If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything
+
+                    "Our auto repair shop offers expert maintenance and repair services, including engine diagnostics,
+                    brake repairs, oil changes, tire services, and more. We ensure fast, reliable work to keep your
+                    vehicle running smoothly and safely. Your car, our care!"
                 </p>
             </div>
             <div class="service_container">
@@ -362,11 +317,12 @@
                             </h2>
                         </div>
                         <p class="detail_p_mt">
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected humour, orThere are many variations of
-                            passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                            by injected humour, orThere are many variations of passages of Lorem Ipsum available, but
-                            the majority have suffered alteration in some form, by injected humour, or
+                            Rapidé’s quality assurance can be summed up in these words: CASA-quality
+                            services at affordable prices.
+                            Our team of skilled technicians, coupled with state of the art equipment, allow us to fulfil
+                            this vision. This vision is what we now refer to as the Rapidé Way,
+                            and it’s something that separates us from every other competitor out there.
+                            Curious about the #RapidéWay and what makes it so good? Come and experience it for yourself!
                         </p>
                         <a href="about.html" class="">
                             Read More
@@ -375,7 +331,7 @@
                 </div>
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="images/about-img.jpg" class="box_img" alt="about img">
+                        <img src="images/bg1.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
             </div>
@@ -386,78 +342,17 @@
 
     <!-- team section -->
 
-    <section class="team_section layout_padding">
-        <div class="container">
-            <div class="heading_container heading_center">
-                <h2>
-                    Our Team
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet, non odio tincidunt ut ante, lorem a euismod suspendisse vel, sed quam
-                    nulla mauris
-                    iaculis. Erat eget vitae malesuada, tortor tincidunt porta lorem lectus.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 mx-auto">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/t1.jpg" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h5>
-                                Martin Anderson
-                            </h5>
-                            <h6 class="">
-                                supervisor
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mx-auto">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/t2.jpg" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h5>
-                                Denny Butler
-                            </h5>
-                            <h6 class="">
-                                supervisor
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 mx-auto">
-                    <div class="box">
-                        <div class="img-box">
-                            <img src="images/t3.jpg" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h5>
-                                Nathan Mcpherson
-                            </h5>
-                            <h6 class="">
-                                supervisor
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- end team section -->
 
     <!-- contact section -->
-    <section class="contact_section ">
+    <section class="contact_section mt-5">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="images/contact-img.jpg" class="box_img" alt="about img">
+                        <img src="images/bg3.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
                 <div class="col-md-5 mx-auto">
@@ -508,7 +403,7 @@
     <!-- end contact section -->
 
     <!-- client section -->
-
+    <!-- 
     <section class="client_section layout_padding">
         <div class="container ">
             <div class="heading_container heading_center">
@@ -608,7 +503,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- end client section -->
 
@@ -619,7 +514,7 @@
                 <div class="row">
                     <div class="col-md-3 ">
                         <a class="navbar-brand" href="index.html">
-                            Finter
+                            Rapide
                         </a>
                     </div>
                     <div class="col-md-5 ">
@@ -633,7 +528,7 @@
                             <a href="">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                 <span>
-                                    +01 1234567890
+                                    Call : 0966 061 9979
                                 </span>
                             </a>
                         </div>
@@ -642,15 +537,6 @@
                         <div class="social_box">
                             <a href="">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -743,7 +629,7 @@
         <div class="container">
             <p>
                 &copy; <span id="displayYear"></span> All Rights Reserved By
-                <a href="https://html.design/">Free Html Templates</a>
+                <a href="">Rapide.ph</a>
             </p>
         </div>
     </footer>
@@ -766,6 +652,10 @@
     <script src="js/custom.js"></script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76A7a9Hr8lFztXXwjbK6g3Kbt1Lz6Y3auD8r5c6EwHgjV4ldtJgROZXB6ZGdvep" crossorigin="anonymous">
     </script>
     <!-- End Google Map -->
 </body>
