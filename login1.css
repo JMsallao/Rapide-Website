@@ -1,0 +1,132 @@
+/* General body and text settings */
+body {
+    background-color: rgb(220, 211, 211);
+    color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Style for the Sign Up button at the top */
+.btn-signup {
+    background-color: rgb(255, 236, 92);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 30%;
+}
+
+/* Style for the login form */
+.login-form {
+    width: 500px;
+    background-color: rgb(132, 132, 132);
+    padding: 20px;
+    margin-top: 20%;
+    margin-left: 30%;
+    border-radius: 10px;
+    /* border: 2px solid yellow; */
+
+}
+
+/* Form inputs */
+.login-form input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Form button */
+.login-form button {
+    background-color: rgb(83, 83, 83);
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    margin-left: 25%;
+}
+
+/* Offcanvas styling */
+.offcanvas-header {
+    background-color: rgb(61, 61, 61);
+}
+
+.offcanvas-title {
+    color: rgb(0, 0, 0);
+}
+
+.offcanvas-body {
+    background-color: rgb(109, 109, 109);
+    color: rgb(0, 0, 0);
+}
+
+/* Offcanvas form inputs */
+.offcanvas-body input {
+    background-color: rgb(255, 255, 197);
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Offcanvas form submit button */
+.offcanvas-body button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.Reg_form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.regfield {
+    margin-left: 20px;
+    margin-bottom: 40px;
+    margin-top: 15px;
+    width: 125px;
+    line-height: 40px;
+    text-align: right;
+    height: 50px;
+    font-weight: 300;
+    font-size: 20px;
+}
+.label_field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
