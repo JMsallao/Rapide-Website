@@ -49,85 +49,85 @@
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/dashboard.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">dashboard</i>
-            </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/tables.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/billing.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt_long</i>
-            </div>
-            <span class="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/virtual-reality.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">view_in_ar</i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/rtl.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/notifications.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">notifications</i>
-            </div>
-            <span class="nav-link-text ms-1">Notifications</span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/profile.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-in.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-up.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+<div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      
+      <li class="nav-item">
+        <a class="nav-link text-white " href="dashboard.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">dashboard</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Dashboard</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item">
+        <a class="nav-link text-white " href="tables.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">table_view</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Tables</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item">
+        <a class="nav-link text-white " href="billing.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">receipt_long</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Billing</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white " href="notifications.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">notifications</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Notifications</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link text-white " href="profile.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">person</i>
+        </div>
+    
+      <span class="nav-link-text ms-1">Profile</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item">
+      <form action="logouot.php" method="post" class="logout-form">
+        <a class="nav-link text-white " href="../../index.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">logout</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Log out</span>
+        </a>
+      </li>  
+    </ul>
+</div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
         <a class="btn btn-outline-primary mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
@@ -142,9 +142,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Template</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Map</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Template</h6>
+          <h6 class="font-weight-bolder mb-0">Map</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -259,6 +259,20 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
+      <div class="row min-vh-80">
+        <div class="col-12">
+          <div class="card h-100">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+              <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                <h5 class="text-white text-capitalize ps-3">Vector Map</h5>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="vector-map" class="mt-5 min-height-500"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <footer class="footer py-4  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -372,6 +386,55 @@
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/world.js"></script>
+  <script>
+    // Initialize the vector map
+    var map = new jsVectorMap({
+      selector: "#vector-map",
+      map: "world_merc",
+      zoomOnScroll: false,
+      zoomButtons: false,
+      selectedMarkers: [1, 3],
+      markersSelectable: true,
+      markers: [{
+          name: "USA",
+          coords: [40.71296415909766, -74.00437720027804]
+        },
+        {
+          name: "Germany",
+          coords: [51.17661451970939, 10.97947735117339]
+        },
+        {
+          name: "Brazil",
+          coords: [-7.596735421549542, -54.781694323779185]
+        },
+        {
+          name: "Russia",
+          coords: [62.318222797104276, 89.81564777631716]
+        },
+        {
+          name: "China",
+          coords: [22.320178999475512, 114.17161225541399],
+          style: {
+            fill: '#E91E63'
+          }
+        }
+      ],
+      markerStyle: {
+        initial: {
+          fill: "#e91e63"
+        },
+        hover: {
+          fill: "E91E63"
+        },
+        selected: {
+          fill: "E91E63"
+        }
+      },
+
+
+    });
+  </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

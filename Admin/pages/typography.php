@@ -49,85 +49,85 @@
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/dashboard.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">dashboard</i>
-            </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/tables.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/billing.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt_long</i>
-            </div>
-            <span class="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/virtual-reality.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">view_in_ar</i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/rtl.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/notifications.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">notifications</i>
-            </div>
-            <span class="nav-link-text ms-1">Notifications</span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/profile.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-in.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-up.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">assignment</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+<div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      
+      <li class="nav-item">
+        <a class="nav-link text-white " href="dashboard.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">dashboard</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Dashboard</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item">
+        <a class="nav-link text-white " href="tables.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">table_view</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Tables</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item">
+        <a class="nav-link text-white " href="billing.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">receipt_long</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Billing</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-white " href="notifications.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">notifications</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Notifications</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link text-white " href="profile.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">person</i>
+        </div>
+    
+      <span class="nav-link-text ms-1">Profile</span>
+        </a>
+      </li>
+
+  
+      <li class="nav-item">
+      <form action="logouot.php" method="post" class="logout-form">
+        <a class="nav-link text-white " href="../../index.php">
+    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">logout</i>
+        </div>
+    
+        <span class="nav-link-text ms-1">Log out</span>
+        </a>
+      </li>  
+    </ul>
+</div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
         <a class="btn btn-outline-primary mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
@@ -142,9 +142,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">icons</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">typography</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">icons</h6>
+          <h6 class="font-weight-bolder mb-0">typography</h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -260,19 +260,38 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row min-vh-80">
-        <div class="col-6 mx-auto">
+        <div class="col-12">
           <div class="card mt-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Material Design Icons</h6>
-                <p class="mb-0 text-white ps-3">Handcrafted by our friends from
-                  <a class="text-white font-weight-bold" target="_blank" href="https://fonts.google.com/icons">Google</a>
+                <h6 class="text-white text-capitalize ps-3">Material Dashboard Heading</h6>
+                <p class="mb-0 text-white ps-3">Created using Roboto Slab Font Family
                 </p>
               </div>
             </div>
-            <div class="card-body">
-              <p>Through most of the examples in this dashboard, we have used the default <a href="https://fonts.google.com/icons">Icons for the Material Design</a> provided by Google.</p>
-              <i class="material-icons text-2xl">face</i>
+            <div class="card-body px-5">
+              <h1>h1. Bootstrap heading</h1>
+              <h2>h2. Bootstrap heading</h2>
+              <h3>h3. Bootstrap heading</h3>
+              <h4>h4. Bootstrap heading</h4>
+              <h5>h5. Bootstrap heading</h5>
+              <h6>h6. Bootstrap heading</h6>
+              <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+              <p><del>This line of text is meant to be treated as deleted text.</del></p>
+              <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+              <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+              <p><u>This line of text will render as underlined</u></p>
+              <p><small>This line of text is meant to be treated as fine print.</small></p>
+              <p><strong>This line rendered as bold text.</strong></p>
+              <p><em>This line rendered as italicized text.</em></p>
+              <figure>
+                <blockquote class="blockquote">
+                  <p class="ps-2">Because I’m here to follow my dreams and inspire other people to follow their dreams, too.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer ps-3">
+                  Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
