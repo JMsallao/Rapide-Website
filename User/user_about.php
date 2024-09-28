@@ -16,7 +16,7 @@ include('user_navbar.php');
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
-    <title>Rapide.ph</title>
+    <title>Finter</title>
 
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
@@ -34,7 +34,7 @@ include('user_navbar.php');
     <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="../css/style3.css" rel="stylesheet" />
+    <link href="css\style2.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="../css/responsive.css" rel="stylesheet" />
 </head>
