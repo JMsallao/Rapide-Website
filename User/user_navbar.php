@@ -1340,6 +1340,9 @@ include('../header.php');
 
 <body>
     <?php
+
+
+    // Fetch user data
     $sql = "SELECT * FROM usertable WHERE uname='" . $_SESSION['uname'] . "'";
     $result = $conn->query($sql);
 
@@ -1347,9 +1350,10 @@ include('../header.php');
     ?>
     <div class="hero_area">
         <div class="hero_bg_box">
-            <img src="../images/hero-bg.jpg" alt="">
+            <img src="../images/hero-bg.jpg" alt="Hero Background">
         </div>
-        <!-- header section strats -->
+
+        <!-- Header section starts -->
         <header class="header_section">
             <div class="header_top">
                 <div class="container-fluid header_top_container">
@@ -1357,30 +1361,28 @@ include('../header.php');
                     <div class="contact_nav">
                         <a href="https://maps.app.goo.gl/UVx78RXjyc3iArVX7">
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <span>
-                                Rapide Location
-                            </span>
+                            <span>Rapide Location</span>
                         </a>
-                        <a href="">
+                        <a href="tel:09660619979">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            <span>
-                                Call : 0966 061 9979 (Smart)0919 269 4103(Globe)
-                            </span>
+                            <span>Call : 0966 061 9979 (Smart) | 0919 269 4103 (Globe)</span>
                         </a>
-
                     </div>
+
                     <div class="social_box">
                         <a href="https://www.facebook.com/RapideKawitCavite">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
                     </div>
+
                     <div class="user_tab">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="user">
                                     <div class="user_photo">
-                                        <img src="../profile_picture/<?php echo $row['image_file'] ?>" alt="">
+                                        <img src="../profile_picture/<?php echo htmlspecialchars($row['image_file']); ?>"
+                                            alt="User Photo">
                                     </div>
                                 </div>
                             </button>
@@ -1388,59 +1390,85 @@ include('../header.php');
                                 <div class="dropdown_container">
                                     <li>
                                         <form action="user_profile.php" method="post">
-                                            <button>Profile</button>
+                                            <button type="submit">Profile</button>
                                         </form>
                                     </li>
                                     <li>
-                                        <form action="logout.php" method="post"><button type="submit"
-                                                name="logout">Logout</button></form>
+                                        <form action="logout.php" method="post">
+                                            <button type="submit" name="logout">Logout</button>
+                                        </form>
                                     </li>
                                 </div>
                             </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
+
             <div class="header_bottom">
                 <div class="container-fluid">
-                    <nav class="navbar navbar-expand-lg custom_nav-container ">
-                        <a class="navbar-brand " href="user_landing.php"> Rapide </a>
-
+                    <nav class="navbar navbar-expand-lg custom_nav-container">
+                        <a class="navbar-brand" href="user_landing.php">Rapide</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
-                            <span class=""> </span>
+                            <span></span>
                         </button>
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav  ">
+                            <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="user_landing.php">Home <span
-                                            class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="user_landing.php">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="user_about.php"> About</a>
+                                    <a class="nav-link" href="user_about.php">About</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="user_service.php">Services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="user_map.php"> Map </a>
+                                    <a class="nav-link" href="user_map.php">Map</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="user_contact.php">Contact Us</a>
                                 </li>
-                                <li>
                             </ul>
                         </div>
                     </nav>
-                    <?php } ?>
-
                 </div>
             </div>
         </header>
+    </div>
+    <?php 
+    } 
+    ?>
 
+
+
+
+    <!-- jQery -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- nice select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+        integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76A7a9Hr8lFztXXwjbK6g3Kbt1Lz6Y3auD8r5c6EwHgjV4ldtJgROZXB6ZGdvep" crossorigin="anonymous">
+    </script>
+    <!-- End Google Map -->
 </body>
 
 </html>

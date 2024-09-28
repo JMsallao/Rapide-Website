@@ -20,7 +20,7 @@ include('user_navbar.php');
     <title>Rapide</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="../css\bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
     <!-- fonts style -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -155,7 +155,6 @@ include('user_navbar.php');
 </head>
 
 <body>
-
     <!-- slider section -->
     <section class="slider_section ">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -273,7 +272,7 @@ include('user_navbar.php');
                         <div class="item">
                             <div class="box ">
                                 <div class="img-box">
-                                    <img src="images/s1.png" alt="" />
+                                    <img src="../images/s1.png" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h5>
@@ -289,7 +288,7 @@ include('user_navbar.php');
                         <div class="item">
                             <div class="box ">
                                 <div class="img-box">
-                                    <img src="images/s4.png" alt="" />
+                                    <img src="../images/s4.png" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h5>
@@ -305,7 +304,7 @@ include('user_navbar.php');
                         <div class="item">
                             <div class="box ">
                                 <div class="img-box">
-                                    <img src="images/s6.png" alt="" />
+                                    <img src="../images/s6.png" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h5>
@@ -321,7 +320,7 @@ include('user_navbar.php');
                         <div class="item">
                             <div class="box ">
                                 <div class="img-box">
-                                    <img src="images/s1.png" alt="" />
+                                    <img src="../images/s1.png" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h5>
@@ -353,7 +352,7 @@ include('user_navbar.php');
                         <div class="item">
                             <div class="box ">
                                 <div class="img-box">
-                                    <img src="images/s6.png" alt="" />
+                                    <img src="../images/s6.png" alt="" />
                                 </div>
                                 <div class="detail-box">
                                     <h5>
@@ -406,7 +405,7 @@ include('user_navbar.php');
                 </div>
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="images/bg1.jpg" class="box_img" alt="about img">
+                        <img src="../images/bg1.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
             </div>
