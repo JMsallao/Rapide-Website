@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION["id"] = $row['id'];
 
             if ($row['is_admin'] == 1) {
-                header('Location: admin.php');
+                header('Location: admin/admin.php');
                 exit();
             } else {
                 echo '<script type="text/javascript">
@@ -34,14 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo '<script type="text/javascript">
             alert("Invalid password");
-            window.location = "index.php";
+            window.location = "login.php";
             </script>';
             exit();
         }
     } else {
         echo '<script type="text/javascript">
         alert("Invalid username or password");
-        window.location = "index.php";
+        window.location = "login.php";
         </script>';
         exit();
     }
