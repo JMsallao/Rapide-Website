@@ -1,5 +1,5 @@
 <?php
-include('header.php');
+include('../header.php');
 include('user_navbar.php');
 ?>
 <!DOCTYPE html>
@@ -16,10 +16,10 @@ include('user_navbar.php');
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
-    <title>Finter</title>
+    <title>Rapide.ph</title>
 
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
     <!-- fonts style -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -31,12 +31,12 @@ include('user_navbar.php');
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
         integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
     <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
-    <link href="css\style2.css" rel="stylesheet" />
+    <link href="../css/style3.css" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="../css/responsive.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -66,7 +66,7 @@ include('user_navbar.php');
                 </div>
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="images/about-img.jpg" class="box_img" alt="about img">
+                        <img src="../images/about-img.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
             </div>
