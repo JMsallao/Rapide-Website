@@ -1,0 +1,168 @@
+/* General body and text settings */
+body {
+    background: url('login_bg.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh; /* Ensures full height of the viewport */
+}
+
+
+
+.main_container {
+    background: url('bg1.jpg') no-repeat center center; /* Set the image */
+    background-size: cover; /* Make the image cover the entire div */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Limit maximum width */
+    height: 50%; /* Adjust this to your desired height */
+    padding: 20px;
+    margin: auto;
+    background-color: transparent; /* Remove the grey background */
+}
+
+
+/* Login form container */
+.login-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: 50%; /* Form takes up 50% of the width */
+    max-width: 500px;
+    background-color: rgba(167, 167, 167, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container for the right side */
+.image-container {
+    width: 50%; /* Image takes up 50% of the width */
+    height: 100%; /* Full height */
+}
+
+.image-container img {
+    top: 0;
+    position: absolute;
+    width: 50%; /* Fill the container */
+    height: 50%; /* Full height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Form styling */
+.login-form h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.login-form .form-group {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center; /* Center inputs and buttons */
+}
+
+.login-form input, 
+.login-form button {
+    width: 80%; /* Adjust input/button width */
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px 0;
+    border: none;
+    outline: none;
+}
+
+.login-form button {
+    background-color: rgb(243, 212, 72);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect - changes background color to red */
+.login-form button:hover {
+    background-color: rgb(255, 17, 0);
+    color: rgb(255, 255, 255); /* Adjust text color */
+}
+
+/* Offcanvas styling */
+.offcanvas-header {
+    background-color: rgb(61, 61, 61);
+}
+
+.offcanvas-title {
+    color: rgb(0, 0, 0);
+}
+
+.offcanvas-body {
+    background-color: rgb(109, 109, 109);
+    color: rgb(0, 0, 0);
+}
+
+.offcanvas-body input {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.offcanvas-body button {
+    background-color: rgb(243, 212, 72); /* Initial background color */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.offcanvas-body button:hover {
+    background-color: rgba(255, 0, 0, 0.7); /* Change background color on hover */
+    color: rgb(255, 255, 255); /* Optional: Change text color */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Stack the form and image vertically on smaller screens */
+    .main_container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .login-form, 
+    .image-container {
+        width: 100%; /* Full width for both */
+    }
+
+    .login-form {
+        margin-right: 0;
+        margin-bottom: 20px; /* Space between form and image */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 15px;
+    }
+
+    .btn-signup {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
