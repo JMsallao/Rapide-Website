@@ -1,3 +1,12 @@
+<?php
+// Include your database connection file
+include 'connection.php';
+
+// Query to get package services from the database
+$sql = "SELECT name, services_inclusion FROM package_list";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -1326,7 +1335,7 @@
 <body>
     <div class="hero_area">
         <div class="hero_bg_box">
-            <img src="images/hero-bg.jpg" alt="">
+            <img src="images/bg3.jpg" alt="">
         </div>
         <!-- header section strats -->
         <header class="header_section">
@@ -1344,16 +1353,7 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav  ">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="user_landing.php">Home <span
-                                            class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="user_about.php"> About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="user_service.php">Services</a>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href="login.php">
                                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -1373,81 +1373,34 @@
         <section class="slider_section ">
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container ">
-                            <div class="row">
-                                <div class="col-lg-10 col-md-11 mx-auto">
-                                    <div class="detail-box">
-                                        <h1>
-                                            We Provide <br>
-                                            Automotive Services
-                                        </h1>
-                                        <p>
-                                            The automotive industry is a vast and dynamic sector that designs,
-                                            manufactures, and sells vehicles, including cars, trucks, motorcycles, and
-                                            buses. It plays a crucial role in global economies, with major contributions
-                                            to employment, innovation, and trade.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="" class="btn1">
-                                                Contact Us
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="container ">
-                            <div class="row">
-                                <div class="col-lg-10 col-md-11 mx-auto">
-                                    <div class="detail-box">
-                                        <h1>
-                                            We Provide <br>
-                                            Automotive Services
-                                        </h1>
-                                        <p>
-                                            The automotive industry is a vast and dynamic sector that designs,
-                                            manufactures, and sells vehicles, including cars, trucks, motorcycles, and
-                                            buses. It plays a crucial role in global economies, with major contributions
-                                            to employment, innovation, and trade.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="" class="btn1">
-                                                Contact Us
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="container ">
-                            <div class="row">
-                                <div class="col-lg-10 col-md-11 mx-auto">
-                                    <div class="detail-box">
-                                        <h1>
-                                            We Provide <br>
-                                            Automotive Services
-                                        </h1>
-                                        <p>
-                                            The automotive industry is a vast and dynamic sector that designs,
-                                            manufactures, and sells vehicles, including cars, trucks, motorcycles, and
-                                            buses. It plays a crucial role in global economies, with major contributions
-                                            to employment, innovation, and trade.
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="" class="btn1">
-                                                Contact Us
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <?php
+                if ($result->num_rows > 0) {
+                    $isActive = true; // To make the first item active
+                    while ($row = $result->fetch_assoc()) {
+                        // Add the "active" class to the first carousel item
+                        $activeClass = $isActive ? 'active' : '';
+                        echo '<div class="carousel-item ' . $activeClass . '">';
+                        echo '<div class="container">';
+                        echo '<div class="row">';
+                        echo '<div class="col-lg-10 col-md-11 mx-auto">';
+                        echo '<div class="detail-box">';
+                        echo '<h1>' . $row["name"] . '</h1>';
+                        echo '<p>' . $row["services_inclusion"] . '</p>';
+                        echo '<div class="btn-box">';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+
+                    // After the first item, don't add the active class
+                    $isActive = false;
+                }
+            } else {
+                echo '<p>No package services available at the moment.</p>';
+            }
+            ?>
                 </div>
                 <div class="carousel_btn-box">
                     <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">

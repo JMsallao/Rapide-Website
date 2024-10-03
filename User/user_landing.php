@@ -629,8 +629,8 @@ include('user_navbar.php');
                     </div>
                     <div class="col-md-4 ">
                         <div class="social_box">
-                            <a href="">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <a href="https://www.facebook.com/RapideKawitCavite">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -640,15 +640,7 @@ include('user_navbar.php');
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="info_detail">
-                            <h5>
-                                Company
-                            </h5>
-                            <p>
-                                Randomised words which don't look even slightly believable. If you are going to use a
-                                passage of
-                                Lorem
-                                Ipsum, you need to be sure
-                            </p>
+                           
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
