@@ -3,8 +3,13 @@
 include 'connection.php';
 
 // Query to get package services from the database
-$sql = "SELECT * FROM package_list";
-$result = $conn->query($sql);
+$sql_package = "SELECT * FROM package_list";
+$result_package = $conn->query($sql_package);
+
+$sql_about = "SELECT * FROM about";
+$result_about = $conn->query($sql_about);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -1374,9 +1379,9 @@ $result = $conn->query($sql);
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                 <?php
-                if ($result->num_rows > 0) {
+                if ($result_package->num_rows > 0) {
                     $isActive = true; // To make the first item active
-                    while ($row = $result->fetch_assoc()) {
+                    while ($row = $result_package->fetch_assoc()) {
                         // Add the "active" class to the first carousel item
                         $activeClass = $isActive ? 'active' : '';
                         echo '<div class="carousel-item ' . $activeClass . '">';
@@ -1386,7 +1391,7 @@ $result = $conn->query($sql);
                         echo '<div class="detail-box">';
                         echo '<h1>' . $row["name"] . '</h1>';
                         echo '<h3>' . $row["services_inclusion"] . '</h3>';
-                        echo '<h5> ₱ ' . $row["price"] . '</h5>';
+                        echo '<p> Starts at ₱ 1600</p>';
                         echo '<div class="btn-box">';
                         echo '<a href="login.php" class="btn1">Book Now</a>';
                         echo '</div>';
@@ -1560,12 +1565,18 @@ $result = $conn->query($sql);
                             </h2>
                         </div>
                         <p class="detail_p_mt">
-                            Rapidé’s quality assurance can be summed up in these words: CASA-quality
-                            services at affordable prices.
-                            Our team of skilled technicians, coupled with state of the art equipment, allow us to fulfil
-                            this vision. This vision is what we now refer to as the Rapidé Way,
-                            and it’s something that separates us from every other competitor out there.
-                            Curious about the #RapidéWay and what makes it so good? Come and experience it for yourself!
+                        <?php 
+                        if ($result_about->num_rows > 0) {
+                            $row = $result_about->fetch_assoc();
+                            echo '<p>' . htmlspecialchars($row["description"]) . '</p>';
+                        }
+                            else {
+                                echo '<p>No about us available at the moment.</p>';
+                            }
+                            
+                            // Close the database connection
+                            $conn->close();
+                            ?>
                         </p>
                         <a href="about.html" class="">
                             Read More
