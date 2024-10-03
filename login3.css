@@ -7,33 +7,33 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
-    height: 100vh; /* Ensures full height of the viewport */
+    height: 100vh;
 }
 
 
 
 .main_container {
-    background: url('bg1.jpg') no-repeat center center; /* Set the image */
-    background-size: cover; /* Make the image cover the entire div */
+    background: url('bg1.jpg') no-repeat center center; 
+    background-size: cover; 
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 1200px; /* Limit maximum width */
-    height: 50%; /* Adjust this to your desired height */
+    max-width: 1200px; 
+    height: 50%; 
     padding: 20px;
     margin: auto;
-    background-color: transparent; /* Remove the grey background */
+    background-color: transparent; 
 }
 
 
 /* Login form container */
 .login-form {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    width: 50%; /* Form takes up 50% of the width */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    width: 50%; 
     max-width: 500px;
     background-color: rgba(167, 167, 167, 0.5);
     padding: 20px;
@@ -44,16 +44,16 @@ body {
 
 /* Image container for the right side */
 .image-container {
-    width: 50%; /* Image takes up 50% of the width */
-    height: 100%; /* Full height */
+    width: 50%; 
+    height: 100%; 
 }
 
 .image-container img {
     top: 0;
     position: absolute;
-    width: 50%; /* Fill the container */
-    height: 50%; /* Full height */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+    width: 50%; 
+    height: 50%; 
+    object-fit: cover; 
 }
 
 /* Form styling */
@@ -66,12 +66,12 @@ body {
     width: 100%;
     margin-bottom: 10px;
     display: flex;
-    justify-content: center; /* Center inputs and buttons */
+    justify-content: center; 
 }
 
 .login-form input, 
 .login-form button {
-    width: 80%; /* Adjust input/button width */
+    width: 80%; 
     padding: 10px;
     border-radius: 8px;
     margin: 5px 0;
@@ -92,7 +92,7 @@ body {
 /* Hover effect - changes background color to red */
 .login-form button:hover {
     background-color: rgb(255, 17, 0);
-    color: rgb(255, 255, 255); /* Adjust text color */
+    color: rgb(255, 255, 255); 
 }
 
 /* Offcanvas styling */
@@ -105,7 +105,8 @@ body {
 }
 
 .offcanvas-body {
-    background-color: rgb(109, 109, 109);
+    background: url('login_bg.png') no-repeat center center; 
+    background-size: cover; 
     color: rgb(0, 0, 0);
 }
 
@@ -126,20 +127,19 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
 /* Hover effect */
 .offcanvas-body button:hover {
-    background-color: rgba(255, 0, 0, 0.7); /* Change background color on hover */
-    color: rgb(255, 255, 255); /* Optional: Change text color */
-    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    background-color: rgba(255, 0, 0, 0.7); 
+    color: rgb(255, 255, 255); 
+    transform: scale(1.05);
 }
 
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    /* Stack the form and image vertically on smaller screens */
     .main_container {
         flex-direction: column;
         height: auto;
@@ -147,12 +147,12 @@ body {
 
     .login-form, 
     .image-container {
-        width: 100%; /* Full width for both */
+        width: 100%; 
     }
 
     .login-form {
         margin-right: 0;
-        margin-bottom: 20px; /* Space between form and image */
+        margin-bottom: 20px; 
     }
 }
 

@@ -50,7 +50,6 @@
             <div class="offcanvas-body">
                 <form action="regconn.php" method="post">
                     <div class="container">
-                        <h1>Sign Up</h1>
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group">
