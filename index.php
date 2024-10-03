@@ -3,7 +3,7 @@
 include 'connection.php';
 
 // Query to get package services from the database
-$sql = "SELECT name, services_inclusion FROM package_list";
+$sql = "SELECT * FROM package_list";
 $result = $conn->query($sql);
 ?>
 
@@ -1385,8 +1385,10 @@ $result = $conn->query($sql);
                         echo '<div class="col-lg-10 col-md-11 mx-auto">';
                         echo '<div class="detail-box">';
                         echo '<h1>' . $row["name"] . '</h1>';
-                        echo '<p>' . $row["services_inclusion"] . '</p>';
+                        echo '<h3>' . $row["services_inclusion"] . '</h3>';
+                        echo '<h5> ₱ ' . $row["price"] . '</h5>';
                         echo '<div class="btn-box">';
+                        echo '<a href="login.php" class="btn1">Book Now</a>';
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
