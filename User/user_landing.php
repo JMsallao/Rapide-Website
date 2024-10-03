@@ -425,14 +425,30 @@ include('user_navbar.php');
             <div class="row">
                 <div id="map" style="width: 50%; height: 300px;"></div>
                 <script>
-                maptilersdk.config.apiKey = 'Pn4vxcWgqoFGN0zJ9Osd';
-                const map = new maptilersdk.Map({
-                    container: 'map', // container's id or the HTML element to render the map
-                    style: "basic-v2-light",
-                    center: [16.62662018, 49.2125578], // starting position [lng, lat]
-                    zoom: 14, // starting zoom
-                });
-                </script>
+        maptilersdk.config.apiKey = 'Pn4vxcWgqoFGN0zJ9Osd'; // Your API key
+        const map = new maptilersdk.Map({
+            container: 'map', // container's id or the HTML element to render the map
+            style: 'basic-v2-light', // or choose another style from MapTiler
+            center: [120.90164, 14.444426], // Kawit coordinates [lng, lat]
+            zoom: 13, // Zoom level to show a 10-15 km radius
+        });
+
+        // Optional: Add a marker for Kawit
+        const marker = new maptilersdk.Marker()
+            .setLngLat([120.9300, 14.4852]) // Marker position for Kawit
+            .setPopup(new maptilersdk.Popup({ offset: 25 }).setText('Kawit, Cavite')) // Popup with Kawit name
+            .addTo(map);
+
+        // Optional: Add a circle to indicate the radius
+        const circle = new maptilersdk.Circle({
+            center: [120.9300, 14.4852], // Center of the circle
+            radius: 15000, // Radius in meters (15 km)
+            color: 'rgba(0, 0, 255, 0.2)', // Color with transparency
+            strokeColor: 'rgba(0, 0, 255, 0.5)', // Circle border color
+            strokeWidth: 2 // Border width
+        });
+        circle.addTo(map);
+    </script>
             </div>
 
         </div>
@@ -629,8 +645,8 @@ include('user_navbar.php');
                     </div>
                     <div class="col-md-4 ">
                         <div class="social_box">
-                        <a href="https://www.facebook.com/RapideKawitCavite">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <a href="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -640,7 +656,15 @@ include('user_navbar.php');
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="info_detail">
-                           
+                            <h5>
+                                Company
+                            </h5>
+                            <p>
+                                Randomised words which don't look even slightly believable. If you are going to use a
+                                passage of
+                                Lorem
+                                Ipsum, you need to be sure
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
