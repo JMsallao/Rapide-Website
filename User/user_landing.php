@@ -1,6 +1,17 @@
 <?php
+// Include your database connection file
 include('../header.php');
 include('user_navbar.php');
+
+
+// Query to get package services from the database
+$sql_package = "SELECT * FROM package_list";
+$result_package = $conn->query($sql_package);
+
+$sql_about = "SELECT * FROM about";
+$result_about = $conn->query($sql_about);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -155,85 +166,49 @@ include('user_navbar.php');
 </head>
 
 <body>
+
+    <div class="chat">
+        <a href="../chat_system\user\chatroom.php?id=3">
+            <button value=" <?php echo $row['chatroomid']; ?>" type="button" class="btn  border-0"
+                data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                <img src="img\chat_icon.png" />
+            </button>
+        </a>
+    </div>
     <!-- slider section -->
     <section class="slider_section ">
         <div id="customCarousel1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-lg-10 col-md-11 mx-auto">
-                                <div class="detail-box">
-                                    <h1>
-                                        We Provide <br>
-                                        Automotive Services
-                                    </h1>
-                                    <p>
-                                        The automotive industry is a vast and dynamic sector that designs,
-                                        manufactures, and sells vehicles, including cars, trucks, motorcycles, and
-                                        buses. It plays a crucial role in global economies, with major contributions
-                                        to employment, innovation, and trade.
-                                    </p>
-                                    <div class="btn-box">
-                                        <a href="" class="btn1">
-                                            Contact Us
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-lg-10 col-md-11 mx-auto">
-                                <div class="detail-box">
-                                    <h1>
-                                        We Provide <br>
-                                        Automotive Services
-                                    </h1>
-                                    <p>
-                                        The automotive industry is a vast and dynamic sector that designs,
-                                        manufactures, and sells vehicles, including cars, trucks, motorcycles, and
-                                        buses. It plays a crucial role in global economies, with major contributions
-                                        to employment, innovation, and trade.
-                                    </p>
-                                    <div class="btn-box">
-                                        <a href="" class="btn1">
-                                            Contact Us
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container ">
-                        <div class="row">
-                            <div class="col-lg-10 col-md-11 mx-auto">
-                                <div class="detail-box">
-                                    <h1>
-                                        We Provide <br>
-                                        Automotive Services
-                                    </h1>
-                                    <p>
-                                        The automotive industry is a vast and dynamic sector that designs,
-                                        manufactures, and sells vehicles, including cars, trucks, motorcycles, and
-                                        buses. It plays a crucial role in global economies, with major contributions
-                                        to employment, innovation, and trade.
-                                    </p>
-                                    <div class="btn-box">
-                                        <a href="" class="btn1">
-                                            Contact Us
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                if ($result_package->num_rows > 0) {
+                    $isActive = true; // To make the first item active
+                    while ($row = $result_package->fetch_assoc()) {
+                        // Add the "active" class to the first carousel item
+                        $activeClass = $isActive ? 'active' : '';
+                        echo '<div class="carousel-item ' . $activeClass . '">';
+                        echo '<div class="container">';
+                        echo '<div class="row">';
+                        echo '<div class="col-lg-10 col-md-11 mx-auto">';
+                        echo '<div class="detail-box">';
+                        echo '<h1>' . $row["name"] . '</h1>';
+                        echo '<h3>' . $row["services_inclusion"] . '</h3>';
+                        echo '<p> Starts at ₱ 1600</p>';
+                        echo '<div class="btn-box">';
+                        echo '<a href="login.php" class="btn1">Book Now</a>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+
+                    // After the first item, don't add the active class
+                    $isActive = false;
+                }
+            } else {
+                echo '<p>No package services available at the moment.</p>';
+            }
+            ?>
             </div>
             <div class="carousel_btn-box">
                 <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
@@ -425,30 +400,32 @@ include('user_navbar.php');
             <div class="row">
                 <div id="map" style="width: 50%; height: 300px;"></div>
                 <script>
-        maptilersdk.config.apiKey = 'Pn4vxcWgqoFGN0zJ9Osd'; // Your API key
-        const map = new maptilersdk.Map({
-            container: 'map', // container's id or the HTML element to render the map
-            style: 'basic-v2-light', // or choose another style from MapTiler
-            center: [120.90164, 14.444426], // Kawit coordinates [lng, lat]
-            zoom: 13, // Zoom level to show a 10-15 km radius
-        });
+                maptilersdk.config.apiKey = 'Pn4vxcWgqoFGN0zJ9Osd'; // Your API key
+                const map = new maptilersdk.Map({
+                    container: 'map', // container's id or the HTML element to render the map
+                    style: 'basic-v2-light', // or choose another style from MapTiler
+                    center: [120.90164, 14.444426], // Kawit coordinates [lng, lat]
+                    zoom: 13, // Zoom level to show a 10-15 km radius
+                });
 
-        // Optional: Add a marker for Kawit
-        const marker = new maptilersdk.Marker()
-            .setLngLat([120.9300, 14.4852]) // Marker position for Kawit
-            .setPopup(new maptilersdk.Popup({ offset: 25 }).setText('Kawit, Cavite')) // Popup with Kawit name
-            .addTo(map);
+                // Optional: Add a marker for Kawit
+                const marker = new maptilersdk.Marker()
+                    .setLngLat([120.9300, 14.4852]) // Marker position for Kawit
+                    .setPopup(new maptilersdk.Popup({
+                        offset: 25
+                    }).setText('Kawit, Cavite')) // Popup with Kawit name
+                    .addTo(map);
 
-        // Optional: Add a circle to indicate the radius
-        const circle = new maptilersdk.Circle({
-            center: [120.9300, 14.4852], // Center of the circle
-            radius: 15000, // Radius in meters (15 km)
-            color: 'rgba(0, 0, 255, 0.2)', // Color with transparency
-            strokeColor: 'rgba(0, 0, 255, 0.5)', // Circle border color
-            strokeWidth: 2 // Border width
-        });
-        circle.addTo(map);
-    </script>
+                // Optional: Add a circle to indicate the radius
+                const circle = new maptilersdk.Circle({
+                    center: [120.9300, 14.4852], // Center of the circle
+                    radius: 15000, // Radius in meters (15 km)
+                    color: 'rgba(0, 0, 255, 0.2)', // Color with transparency
+                    strokeColor: 'rgba(0, 0, 255, 0.5)', // Circle border color
+                    strokeWidth: 2 // Border width
+                });
+                circle.addTo(map);
+                </script>
             </div>
 
         </div>

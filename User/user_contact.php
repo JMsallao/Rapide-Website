@@ -129,13 +129,12 @@ include('user_navbar.php');
 
 <body class="sub_page">
     <!-- contact section -->
-    <section class="contact_section ">
+    <section class="contact_section mt-5">
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-6 px-0">
                     <div class="img-box ">
-                        <img src="../images/contact-img.jpg" class="box_img" alt="about img">
+                        <img src="../images/bg3.jpg" class="box_img" alt="about img">
                     </div>
                 </div>
                 <div class="col-md-5 mx-auto">
@@ -184,15 +183,13 @@ include('user_navbar.php');
         </div>
     </section>
     <!-- end contact section -->
-
-    <!-- info section -->
     <section class="info_section ">
         <div class="container">
             <div class="info_top">
                 <div class="row">
                     <div class="col-md-3 ">
-                        <a class="navbar-brand" href="index.html">
-                            Finter
+                        <a class="navbar-brand" href="../index.html">
+                            Rapide
                         </a>
                     </div>
                     <div class="col-md-5 ">
@@ -206,7 +203,7 @@ include('user_navbar.php');
                             <a href="">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                 <span>
-                                    +01 1234567890
+                                    Call : 0966 061 9979
                                 </span>
                             </a>
                         </div>
@@ -215,15 +212,6 @@ include('user_navbar.php');
                         <div class="social_box">
                             <a href="">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -308,6 +296,7 @@ include('user_navbar.php');
             </div>
         </div>
     </section>
+
 
     <!-- end info_section -->
 
