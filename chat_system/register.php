@@ -12,7 +12,7 @@
 		$username=check_input($_POST['username']);
 		
 		if (!preg_match("/^[a-zA-Z0-9_]*$/",$username)) {
-			$_SESSION['sign_msg'] = "Username should not contain space and special characters!"; 
+			$_SESSION['sign_msg'] = "Username should not contain space and special characters!!"; 
 			header('location: signup.php');
 		}
 		else{
